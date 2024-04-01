@@ -70,6 +70,7 @@ from .AntdSkeletonAvatar import AntdSkeletonAvatar as SkeletonAvatar
 from .AntdSkeletonButton import AntdSkeletonButton as SkeletonButton
 from .AntdSkeletonImage import AntdSkeletonImage as SkeletonImage
 from .AntdSkeletonInput import AntdSkeletonInput as SkeletonInput
+from .AntdFormRender import AntdFormRender as FormRender
 from .AntdButton import AntdButton as Button
 from .AntdFloatButton import AntdFloatButton as FloatButton
 from .AntdFloatButtonGroup import AntdFloatButtonGroup as FloatButtonGroup
@@ -89,14 +90,14 @@ from .AntdSider import AntdSider as Sider
 from .AntdSpace import AntdSpace as Space
 from .AntdCol import AntdCol as Col
 from .AntdRow import AntdRow as Row
-from .AntdAffix import AntdAffix as Affix
+from .AntdAnchor import AntdAnchor as Anchor
 from .AntdBreadcrumb import AntdBreadcrumb as Breadcrumb
 from .AntdDropdown import AntdDropdown as Dropdown
 from .AntdMenu import AntdMenu as Menu
 from .AntdPageHeader import AntdPageHeader as PageHeader
 from .AntdPagination import AntdPagination as Pagination
 from .AntdSteps import AntdSteps as Steps
-from .AntdAnchor import AntdAnchor as Anchor
+from .AntdAffix import AntdAffix as Affix
 from .AntdBackTop import AntdBackTop as BackTop
 from .AntdConfigProvider import AntdConfigProvider as ConfigProvider
 from .AntdCopyText import AntdCopyText as CopyText
@@ -179,6 +180,7 @@ __all__ = [
     "SkeletonButton",
     "SkeletonImage",
     "SkeletonInput",
+    "FormRender",
     "Button",
     "FloatButton",
     "FloatButtonGroup",
@@ -198,14 +200,14 @@ __all__ = [
     "Space",
     "Col",
     "Row",
-    "Affix",
+    "Anchor",
     "Breadcrumb",
     "Dropdown",
     "Menu",
     "PageHeader",
     "Pagination",
     "Steps",
-    "Anchor",
+    "Affix",
     "BackTop",
     "ConfigProvider",
     "CopyText",

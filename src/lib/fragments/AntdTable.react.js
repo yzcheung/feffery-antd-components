@@ -270,6 +270,12 @@ class AntdTable extends Component {
         const changedProps = Object.keys(nextProps)
             .filter(key => !isEqual(this.props[key], nextProps[key]))
 
+        // 特殊处理：
+        // 当recentlySelectValue发生变动时，阻止本次重绘
+        if (changedProps.includes('recentlySelectValue')) {
+            return false;
+        }
+
         // #80
         // selectedRowsSyncWithData=true时，当data发生更新，在selectedRowKeys有效时，对selectedRows进行同步更新
         if (
@@ -1811,14 +1817,32 @@ class AntdTable extends Component {
                                             setProps({
                                                 recentlyCellClickColumn: item.dataIndex,
                                                 recentlyCellClickRecord: record,
-                                                nClicksCell: nClicksCell + 1
+                                                nClicksCell: nClicksCell + 1,
+                                                cellClickEvent: {
+                                                    pageX: e.pageX,
+                                                    pageY: e.pageY,
+                                                    clientX: e.clientX,
+                                                    clientY: e.clientY,
+                                                    screenX: e.screenX,
+                                                    screenY: e.screenY,
+                                                    timestamp: Date.now()
+                                                }
                                             })
                                         },
                                         onDoubleClick: e => {
                                             setProps({
                                                 recentlyCellDoubleClickColumn: item.dataIndex,
                                                 recentlyCellDoubleClickRecord: record,
-                                                nDoubleClicksCell: nDoubleClicksCell + 1
+                                                nDoubleClicksCell: nDoubleClicksCell + 1,
+                                                cellDoubleClickEvent: {
+                                                    pageX: e.pageX,
+                                                    pageY: e.pageY,
+                                                    clientX: e.clientX,
+                                                    clientY: e.clientY,
+                                                    screenX: e.screenX,
+                                                    screenY: e.screenY,
+                                                    timestamp: Date.now()
+                                                }
                                             })
                                         }
                                     }
